@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Transport - Campus Connect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="main-header">
+        
+        <div class="container header-content">
+            <div class="logo">
+                <img src="data:image/jpeg;base64,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">
+                <span>Transport Service</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#bus-routes" class="nav-button">Bus Routes</a></li>
+                    <li><a href="#regForm" class="nav-button">Registration</a></li>
+                    <li><a href="#student-info" class="nav-button">Student Info</a></li>
+                    <li><a href="#bus-info" class="nav-button">Bus Info</a></li>
+                    <li><a href="#i-card-generator" class="nav-button">I-Card Generator</a></li>
+                    <li><a href="#faculty-info" class="nav-button">Faculty Info</a></li>
+                    <li><a href="#transport-poll" class="nav-button">Poll</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container hero-content">
+            <h1>Kanpur Institute of Technology</h1>
+            <h2>Your Journey Starts Here</h2>
+            <p>Safe, Reliable & Convenient Transportation</p>
+            <div class="hero-buttons">
+                <a href="#registration" class="btn btn-primary">Register Now</a>
+                <a href="#bus-routes" class="btn btn-secondary">View Routes</a>
+            </div>
+        </div>
+    </section>
+
+    <main>
+        <section id="bus-routes" class="section-padded">
+            <div class="container">
+                <h2><i class="fas fa-route icon-left"></i> Bus Routes</h2>
+                <div class="route-grid">
+                    <div class="route-card">
+                        <h3>Route 1: BITHOOR ROAD</h3>
+                        <p><strong>Buses:</strong> Bus A</p>
+                        <p><strong>Bus No:</strong> UP 78 DN 9068</p>
+                        <p><strong>Stops & Timings:</strong>
+                            <ol>
+                                <li>Bithoor Road - 7:18AM</li>
+                                <li>Indira Nagar Chauraha - 7:25AM</li>
+                                <li>Awadhpuri - 7:32AM</li>
+                                <li>Gurudeo - 7:34AM</li>
+                                <li>Kanpur Zoo - 7:39AM</li>
+                                <li>Company Bagh - 7:43AM</li>
+                                <li>UPTTI - 7:45AM</li>
+                                <li>Green Park - 8:00AM</li>
+                                <li>Parde - 8:03AM</li>
+                                <li>Bada Chauraha - 8:05AM</li>
+                                <li>BSNL Building - 8:08AM</li>
+                                <li>Phoolbagh - 8:10AM</li>
+                                <li>Mallroad - 8:12AM</li>
+                                <li>Pandit Hotel - 8:14AM</li>
+                                <li>CANTT - 8:15AM</li>
+                                <li>Jugai Purwa - 8:19AM</li>
+                                <li>Police Chauki - 8:24AM</li>
+                                <li>KDA - 8:26AM</li>
+                                <li>JK IST - 8:28AM</li>
+                                <li>Ramadevi - 8:33AM</li>
+                                <li>KIT - 8:50AM</li>
+                                
+                            </ol>
+                        </p>
+                        
+                        <button class="btn btn-small view-details">View Map</button>
+                    </div>
+                    <div class="route-card">
+                        <h3>Route 2: RATANPUR ROAD</h3>
+                        <p><strong>Buses:</strong> Bus B</p>
+                        <p><strong>Bus NO:</strong> UP 78 FN 9099</p>
+                        <p><strong>Stops & Timings:</strong>
+                            <ol>
+                                <li>Ratanpur - 7:30AM</li>
+                                <li>Panki Nahar - 7:36AM</li>
+                                <li>Armapur gate - 7:39AM</li>
+                                <li>Awas Vikas - 7:40AM</li>
+                                <li>Mirzapur Kharanza - 7:42AM</li>
+                                <li>Nurture Valley - 7:45AM</li>
+                                <li>Maswanpur Chauraha - 7:46AM</li>
+                                <li>Bramadev Chauraha - 7:50AM </li>
+                                <li>Essar Petrol Pump - 7:52AM</li>
+                                <li>Namak Factory Chauraha - 7:54AM</li>
+                                <li>Double Puliya - 8:00AM</li>
+                                <li>Sabji Mandi - 8:05AM</li>
+                                <li>Vijay Nagar - 8:07AM</li>
+                                <li>Fazal Ganj - 8:09AM</li>
+                                <li>Nand Lal - 8:12AM</li>
+                                <li>Deep Cinema - 8:14AM</li>
+                                <li>Kidwai Nagar Chauraha - 8:17AM</li>
+                                <li>Gaushala - 8:19AM</li>
+                                <li>Sote Baba - 8:20AM</li>
+                                <li>SITE 1 - 8:22AM</li>
+                                <li>Bakarganj - 8:25AM</li>
+                                <li>Tatmil - 8:28AM</li>
+                                <li>PAC Mod - 8:32AM</li>
+                                <li>KIT - 8:50AM</li>
+                            </ol>
+                        </p>
+                        
+                        <button class="btn btn-small view-details">View Map</button>
+                    </div>
+                    <div class="route-card">
+                        <h3>Route 3: NAUBASTA BAMBA</h3>
+                        <p><strong>Buses:</strong> Bus C</p>
+                        <p><strong>Bus No:</strong> UP 78 FN 5545</p>
+                        <p><strong>Stops & Timings:</strong>
+                            <ol>
+                                <li>Naubasta Bamba - 7:30AM</li>
+                                <li>PAL Chauraha - 7:34AM</li>
+                                <li>Khadepur Mod - 7:37AM</li>
+                                <li>Bharat Gas - 7:41AM</li>
+                                <li>Vivekanand School - 7:42AM</li>
+                                <li>Gulabi Building - 7:43AM</li>
+                                <li>Barra Bypass - 7:50AM</li>
+                                <li>Sachan - 7:52AM</li>
+                                <li>Sastri Chauk - 7:57AM</li>
+                                <li>Ratanlal Petrol Pump - 8:00AM</li>
+                                <li>Harmilap - 8:10AM</li>
+                                <li>Durga Mandir - 8:13AM</li>
+                                <li>Gujani Tempo Stand - 8:17AM</li>
+                                <li>Barra 8 - 8:20AM</li>
+                                <li>Naubasta Bypass - 8:24AM</li>
+                                <li>Yashoda Nagar Bypass - 8:28AM</li>
+                                <li>Pratap Hotel - 8:32AM</li>
+                                <li>Mangla Vihar - 8:35AM</li>
+                                <li>KIT - 8:50AM</li>
+                                
+                                
+                            </ol>
+                        </p>
+                        
+                        <button class="btn btn-small view-details">View Map</button>
+                    </div>
+                    <div class="route-card">
+                        <h3>Route 4: RAWATPUR CROSSING</h3>
+                        <p><strong>Buses:</strong> Bus D</p>
+                        <p><strong>Bus No.</strong> UP 78 FN 1639</p>
+                        <p><strong>Stops & Timings:</strong>
+                            <ol>
+                                <li>Rawatpur Crossing - 7:30AM</li>
+                                <li>Coco Cola Chauraha - 7:37AM</li>
+                                <li>Gumti No.5 - 7:40AM</li>
+                                <li>Zareeb Chauki Chauraha - 7:46AM</li>
+                                <li>Fazal Ganj Chauraha - 7:50AM</li>
+                                <li>Nand Lal Chauraha - 7:56AM</li>
+                                <li>Deep Cinema - 7:59AM</li>
+                                <li>Kidwai Nagar Thana - 8:03AM</li>
+                                <li>Gaushala - 8:07AM</li>
+                                <li>SITE 1 - 8:10AM</li>
+                                <li>Baba Kuti - 8:12AM</li>
+                                <li>Bakarganj - 8:14AM</li>
+                                <li>Tatmil Chauraha - 8:18AM</li>
+                                <li>PAC Mod - 8:20AM</li>
+                                <li>KIT - 8:50AM</li>
+                            </ol>
+                        </p>
+                        
+                        <button class="btn btn-small view-details">View Map</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGISTRATION FORM (replace existing form) -->
+<form id="regForm" class="registration-form" enctype="multipart/form-data">
+  <div class="form-group">
+    <label for="regName">Full Name</label>
+    <input id="regName" type="text" name="name" required>
+  </div>
+
+  <div class="form-group">
+    <label for="regId">College ID</label>
+    <input id="regId" type="text" name="college_id" required>
+  </div>
+
+  <div class="form-group">
+    <label for="regRole">Role</label>
+    <select id="regRole" name="role" required>
+      <option value="">Select Role</option>
+      <option value="Student">Student</option>
+      <option value="Faculty">Faculty</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="regBus">Select Bus</label>
+    <select id="regBus" name="bus" required>
+      <option value="">Select Bus</option>
+      <option value="Bus 1">Bus 1</option>
+      <option value="Bus 2">Bus 2</option>
+      <option value="Bus 3">Bus 3</option>
+      <option value="Bus 4">Bus 4</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="regImage">Upload Photo</label>
+    <input id="regImage" type="file" name="photo" accept="image/*" required>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+        <section id="student-info" class="section-padded">
+            <div class="container">
+                <h2><i class="fas fa-users icon-left"></i> Student Information</h2>
+                <p class="section-description">Search for student transport details. </p>
+                <div class="search-box">
+                  <div class="search-box">
+  <input type="text" id="search-box" placeholder="Search Student or Faculty by Name...">
+  <button id="searchBtn" class="btn">Search</button>
+</div>
+
+                <div class="info-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Route</th>
+                                <th>Bus No.</th>
+                                <th>Seat No.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                
+                                <td>Ashmeet Singh</td>
+                                <td>240762@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                                <td>S35</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Ayush Verma</td>
+                                <td>232215@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                                <td>S02</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Priya Mehrotra</td>
+                                <td>251628@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                                <td>S20</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Ayush Singh Parihar</td>
+                                <td>231832@kit.ac.in</td>
+                                <td>Route 4</td>
+                                <td>Bus D</td>
+                                <td>S43</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Lakshydeep Yaduvanshi</td>
+                                <td>241351@kit.ac.in</td>
+                                <td>Route 4</td>
+                                <td>Bus D</td>
+                                <td>S32</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Saksham Singh Rathore</td>
+                                <td>242535@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                                <td>S45</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Harleen Kaur</td>
+                                <td>240230@kit.ac.in</td>
+                                <td>Route 4</td>
+                                <td>Bus D</td>
+                                <td>S36</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Umme Haram</td>
+                                <td>250536@kit.ac.in</td>
+                                <td>Route 4</td>
+                                <td>Bus D</td>
+                                <td>S32</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Yajur Gupta</td>
+                                <td>232246@kit.ac.in</td>
+                                <td>Route 2</td>
+                                <td>Bus B</td>
+                                <td>S32</td>
+                            </tr>
+                               <tr>
+                                
+                                <td>Satyam dixit</td>
+                                <td>240770@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                                <td>S30</td>
+                            </tr>
+                               <tr>
+                                
+                                <td>Lavish kalwani</td>
+                                <td>251660@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                                <td>S25</td>
+                            </tr>
+                               <tr>
+                                
+                                <td>Anuj Shukla</td>
+                                <td>250437@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                                <td>S26</td>
+                            </tr>
+                            
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="bus-info" class="section-padded section-alt-bg">
+            <div class="container">
+                <h2><i class="fas fa-bus icon-left"></i> Bus Information</h2>
+                <p class="section-description">Detailed information about each bus, its staff, and seat allotments.</p>
+                  <div class="bus-cards-container">
+                    <div class="bus-card">
+                        <h3>Bus A (Route 1)</h3>
+                        <p><strong>Capacity:</strong> 50 seats</p>
+                        <p><strong>Current Allotment:</strong> 37/50</p>
+                        <div class="personnel-info">
+                            <h4>Bus Coordinator:</h4>
+                            <p><strong>Name:</strong> MR. AYUSH SRIVASTAV</p>
+                            <p><strong>Contact:</strong> 6306119721</p>
+                            <p><strong>Details:</strong>FACULTY</p>
+                            <h4>Driver:</h4>
+                            <p><strong>Name:</strong> MR. ANUJ SINGH</p>
+                            <p><strong>Contact:</strong> 7388908083</p>
+                            
+                        </div>
+                        <button class="btn btn-small view-details">View Seat Map</button>
+                    </div>
+                    <div class="bus-card">
+                        <h3>Bus B (Route 2)</h3>
+                        <p><strong>Capacity:</strong> 50 seats</p>
+                        <p><strong>Current Allotment:</strong> 49/50</p>
+                        <div class="personnel-info">
+                            <h4>Bus Coordinator:</h4>
+                            <p><strong>Name:</strong> MR. HARISH VERMA</p>
+                            <p><strong>Contact:</strong> 9621420421</p>
+                            <p><strong>Details:</strong> FACULTY</p>
+                            <h4>Driver:</h4>
+                            <p><strong>Name:</strong> MR. T.N. MISHRA</p>
+                            <p><strong>Contact:</strong> 9519906402</p>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="bus-card">
+                        <h3>Bus C (Route 3)</h3>
+                        <p><strong>Capacity:</strong> 50 seats</p>
+                        <p><strong>Current Allotment:</strong> 35/50</p>
+                        <div class="personnel-info">
+                            <h4>Bus Coordinator:</h4>
+                            <p><strong>Name:</strong> MRS. ANUSHKA SINGH</p>
+                            <p><strong>Contact:</strong> 7318328257</p>
+                            <p><strong>Details:</strong> FACULTY</p>
+                            <h4>Driver:</h4>
+                            <p><strong>Name:</strong> MR. ATIULLAH KHAN</p>
+                            <p><strong>Contact:</strong>9793266700 </p>
+                            
+                        </div>
+                        
+                    </div>
+                    <div class="bus-card">
+                        <h3>Bus D (Route 4)</h3>
+                        <p><strong>Capacity:</strong> 50 seats</p>
+                        <p><strong>Current Allotment:</strong> 34/50</p>
+                        <div class="personnel-info">
+                            <h4>Bus Coordinator:</h4>
+                            <p><strong>Name:</strong> MRS. PRACHI GUPTA</p>
+                            <p><strong>Contact:</strong> 9140360740</p>
+                            <p><strong>Details:</strong> FACULTY</p>
+                            <h4>Driver:</h4>
+                            <p><strong>Name:</strong> MR. MUNNA</p>
+                            <p><strong>Contact:</strong> 9838807117</p>
+                            
+                        </div>
+                        
+                    </div>
+                    </div>
+            </div>
+        </section>
+                <section id="businfo" class="content hidden">
+  
+  <button id="viewSeatsBtn" class="btn btn-primary">View Seats</button>
+
+  <!-- Popup -->
+  <div id="seatPopup" class="seat-popup">
+    <div class="seat-popup-content">
+      <span id="closeSeatPopup" class="close-btn">&times;</span>
+      <h3>🚌 Bus Seating Arrangement</h3>
+      <div id="busSeatMapContainer" class="bus-seat-map"></div>
+    </div>
+  </div>
+</section>
+
+                <div class="bus-cards-container">
+                    <div id="idCardModal" class="modal hidden">
+  <div class="modal-content">
+    <span class="close" id="idModalClose">&times;</span>
+    <div id="idCardContainer"></div>
+    <div style="margin-top:12px;">
+      <button id="downloadCardBtn" class="btn btn-small">Download I-Card</button>
+      <button id="printCardBtn" class="btn btn-small">Print</button>
+    </div>
+  </div>
+</div>
+                        <button class="btn btn-small view-details">View Seat Map</button>
+                    </div>
+                    </div>
+            </div>
+        </section>
+
+        <section id="i-card-generator" class="section-padded">
+            <div class="container">
+                <h2><i class="fas fa-id-card icon-left"></i> Bus I-Card Generator</h2>
+                <p class="section-description">Generate printable I-cards for registered students and faculties.</p>
+                <div class="i-card-form">
+                    <div class="form-group">
+                        <label for="icard-type">User Type:</label>
+                        <select id="icard-type" name="user_type" required>
+                            <option value="">Select Type</option>
+                            <option value="student">Student</option>
+                            <option value="faculty">Faculty</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="icard-id">Student ID / Faculty ID:</label>
+                        <input type="text" id="icard-id" name="user_id" placeholder="Enter ID..." required>
+                    </div>
+                    <button class="btn btn-primary" id="generate-icard-btn"><i class="fas fa-print"></i> Generate I-Card</button>
+                </div>
+
+                <div class="i-card-preview" id="i-card-preview">
+                    <div class="i-card-template">
+                        <div class="i-card-header">
+                            <img src="college_logo_small.png" alt="College Logo" class="i-card-logo">
+                            <h3>College Transport I-Card</h3>
+                        </div>
+                        <div class="i-card-body">
+                            <div class="i-card-photo">
+                                <img src="placeholder_user.png" alt="User Photo">
+                            </div>
+                            <div class="i-card-details">
+                                <p><strong>Name:</strong> <span id="icard-name-display"></span></p>
+                                <p><strong>ID:</strong> <span id="icard-id-display"></span></p>
+                                <p><strong>Type:</strong> <span id="icard-type-display"></span></p>
+                                <p><strong>Route:</strong> <span id="icard-route-display"></span></p>
+                                <p><strong>Bus No:</strong> <span id="icard-bus-display"></span></p>
+                                <p><strong>Valid Until:</strong> <span id="icard-validity-display"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faculty-info" class="section-padded section-alt-bg">
+            <div class="container">
+                <h2><i class="fas fa-chalkboard-teacher icon-left"></i> Faculty Information (Transport Users)</h2>
+                <p class="section-description">Information about faculty members utilizing college transport.</p>
+                <div class="search-bar">
+                    <input type="text" id="faculty-search" placeholder="Search by Faculty ID or Name...">
+                    <button class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+                </div>
+                <div class="info-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                
+                                <th>Name</th>
+                                <th>Department</th>
+                                <th>Email</th>
+                                <th>Route</th>
+                                <th>Bus No.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                
+                                <td>Mrs. Richa Singh</td>
+                                <td>Computer Application</td>
+                                <td>richa.singh@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Mrs. Saba Nehal</td>
+                                <td>C.S.E</td>
+                                <td>saba.nehal@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Mr. Ayush Srivastav</td>
+                                <td>Computer Application</td>
+                                <td>ayush.srivastav@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Mrs. Neelam Upadhyay</td>
+                                <td>S.D.C</td>
+                                <td>neelam.upadhyay@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Mrs. Shailja Gupta</td>
+                                <td>Computer Science</td>
+                                <td>shailja.gupta@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>Mrs. Komal Kushwaha</td>
+                                <td>Admission cell</td>
+                                <td>komal.kushwaha@kit.ac.in</td>
+                                <td>Route 1</td>
+                                <td>Bus A</td>
+                            </tr>
+                            </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+
+        <section id="transport-poll" class="section-padded">
+            <div class="container">
+                <h2><i class="fas fa-poll icon-left"></i> Transport Service Poll</h2>
+                <p class="section-description">Help us improve our transport services by participating in this poll.</p>
+                <form class="poll-form">
+                    <div class="form-group">
+                        <label>Are you a:</label>
+                        <div class="radio-group">
+                            <input type="radio" id="poll-reg-faculty" name="user_status" value="registered_faculty" required>
+                            <label for="poll-reg-faculty">Registered Faculty</label>
+
+                            <input type="radio" id="poll-unreg-faculty" name="user_status" value="unregistered_faculty">
+                            <label for="poll-unreg-faculty">Unregistered Faculty</label>
+
+                            <input type="radio" id="poll-reg-student" name="user_status" value="registered_student">
+                            <label for="poll-reg-student">Registered Student</label>
+
+                            <input type="radio" id="poll-unreg-student" name="user_status" value="unregistered_student">
+                            <label for="poll-unreg-student">Unregistered Student</label>
+                        </div>
+                    </div>
+
+                    <div id="allIdCardsContainer" class="id-cards-gallery"></div>
+
+                    <div class="form-group">
+                        <label for="poll-feedback">Your Feedback (Optional):</label>
+                        <textarea id="poll-feedback" name="feedback" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Poll</button>
+                </form>
+                <div id="poll-results" class="poll-results-display">
+                    <h3>Current Poll Status:</h3>
+                    <div class="poll-summary-grid">
+                        <div class="poll-summary-item">Registered Faculty: <span id="res-reg-faculty">0%</span></div>
+                        <div class="poll-summary-item">Unregistered Faculty: <span id="res-unreg-faculty">0%</span></div>
+                        <div class="poll-summary-item">Registered Student: <span id="res-reg-student">0%</span></div>
+                        <div class="poll-summary-item">Unregistered Student: <span id="res-unreg-student">0%</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 College Transport. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
