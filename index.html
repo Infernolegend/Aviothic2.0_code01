@@ -22,7 +22,6 @@
                     <li><a href="#regForm" class="nav-button">Registration</a></li>
                     <li><a href="#student-info" class="nav-button">Student Info</a></li>
                     <li><a href="#bus-info" class="nav-button">Bus Info</a></li>
-                    <li><a href="#i-card-generator" class="nav-button">I-Card Generator</a></li>
                     <li><a href="#faculty-info" class="nav-button">Faculty Info</a></li>
                     <li><a href="#transport-poll" class="nav-button">Poll</a></li>
                 </ul>
@@ -456,50 +455,6 @@
             </div>
         </section>
 
-        <section id="i-card-generator" class="section-padded">
-            <div class="container">
-                <h2><i class="fas fa-id-card icon-left"></i> Bus I-Card Generator</h2>
-                <p class="section-description">Generate printable I-cards for registered students and faculties.</p>
-                <div class="i-card-form">
-                    <div class="form-group">
-                        <label for="icard-type">User Type:</label>
-                        <select id="icard-type" name="user_type" required>
-                            <option value="">Select Type</option>
-                            <option value="student">Student</option>
-                            <option value="faculty">Faculty</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="icard-id">Student ID / Faculty ID:</label>
-                        <input type="text" id="icard-id" name="user_id" placeholder="Enter ID..." required>
-                    </div>
-                    <button class="btn btn-primary" id="generate-icard-btn"><i class="fas fa-print"></i> Generate I-Card</button>
-                </div>
-
-                <div class="i-card-preview" id="i-card-preview">
-                    <div class="i-card-template">
-                        <div class="i-card-header">
-                            <img src="college_logo_small.png" alt="College Logo" class="i-card-logo">
-                            <h3>College Transport I-Card</h3>
-                        </div>
-                        <div class="i-card-body">
-                            <div class="i-card-photo">
-                                <img src="placeholder_user.png" alt="User Photo">
-                            </div>
-                            <div class="i-card-details">
-                                <p><strong>Name:</strong> <span id="icard-name-display"></span></p>
-                                <p><strong>ID:</strong> <span id="icard-id-display"></span></p>
-                                <p><strong>Type:</strong> <span id="icard-type-display"></span></p>
-                                <p><strong>Route:</strong> <span id="icard-route-display"></span></p>
-                                <p><strong>Bus No:</strong> <span id="icard-bus-display"></span></p>
-                                <p><strong>Valid Until:</strong> <span id="icard-validity-display"></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section id="faculty-info" class="section-padded section-alt-bg">
             <div class="container">
                 <h2><i class="fas fa-chalkboard-teacher icon-left"></i> Faculty Information (Transport Users)</h2>
@@ -629,3 +584,4 @@
 </body>
 
 </html>
+
