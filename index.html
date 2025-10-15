@@ -22,6 +22,7 @@
                     <li><a href="#regForm" class="nav-button">Registration</a></li>
                     <li><a href="#student-info" class="nav-button">Student Info</a></li>
                     <li><a href="#bus-info" class="nav-button">Bus Info</a></li>
+
                     <li><a href="#faculty-info" class="nav-button">Faculty Info</a></li>
                     <li><a href="#transport-poll" class="nav-button">Poll</a></li>
                 </ul>
@@ -41,7 +42,7 @@
         </div>
     </section>
 
-    <main>
+     <main>
         <section id="bus-routes" class="section-padded">
             <div class="container">
                 <h2><i class="fas fa-route icon-left"></i> Bus Routes</h2>
@@ -176,7 +177,26 @@
             </div>
         </section>
 
+
+        <!-- Map Popup -->
+<div id="mapPopup" class="map-popup">
+  <div class="map-popup-content">
+    <span class="close-btn" onclick="closeMapPopup()">&times;</span>
+    <iframe
+      id="routeMapFrame"
+      width="100%"
+      height="450"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+
         <!-- REGISTRATION FORM (replace existing form) -->
+<section class="section-padded registration-section">
+  <h2 class="section-title">Student Registration</h2> 
 <form id="regForm" class="registration-form" enctype="multipart/form-data">
   <div class="form-group">
     <label for="regName">Full Name</label>
@@ -184,17 +204,15 @@
   </div>
 
   <div class="form-group">
-    <label for="regId">College Email</label>
-    <input id="regId" type="text" name="college_email" required>
-  </div>
-
-  <div class="form-group">
     <label for="regId">AFN/Roll Number</label>
     <input id="regId" type="text" name="afn/roll_number" required>
   </div>
-
-      <div class="form-group">
-    <label for="regId">Phone Number</label>
+   <div class="form-group">
+   <label for="regId">Collage Email</label>
+    <input id="regId" type="text" name="college_email" required>
+  </div>
+   <div class="form-group">
+   <label for="regId">Phone Number</label>
     <input id="regId" type="text" name="phone_number" required>
   </div>
 
@@ -371,7 +389,7 @@
                             <p><strong>Contact:</strong> 7388908083</p>
                             
                         </div>
-                        <button class="btn btn-small view-details">View Seat Map</button>
+                     
                     </div>
                     <div class="bus-card">
                         <h3>Bus B (Route 2)</h3>
@@ -395,7 +413,7 @@
                         <p><strong>Current Allotment:</strong> 35/50</p>
                         <div class="personnel-info">
                             <h4>Bus Coordinator:</h4>
-                            <p><strong>Name:</strong> MRS. ANUSHKA SINGH</p>
+                            <p><strong>Name:</strong> MS. ANUSHKA SINGH</p>
                             <p><strong>Contact:</strong> 7318328257</p>
                             <p><strong>Details:</strong> FACULTY</p>
                             <h4>Driver:</h4>
@@ -449,11 +467,12 @@
     </div>
   </div>
 </div>
-                        <button class="btn btn-small view-details">View Seat Map</button>
                     </div>
                     </div>
             </div>
         </section>
+
+        
 
         <section id="faculty-info" class="section-padded section-alt-bg">
             <div class="container">
@@ -582,6 +601,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
