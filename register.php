@@ -2,30 +2,33 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-$con = mysqli_connect('localhost','root','639277','college_student');
+// ✅ Database connection
+$con = mysqli_connect('localhost', 'root', '639277', 'college_student');
 
 if (!$con) {
-    die("Database connection failed: " . mysqli_connect_error());
+    die("❌ Database connection failed: " . mysqli_connect_error());
 }
 
-if (isset($_POST['sb'])) 
-{
-    $sname = $_POST['name'];
-    $stud_id = $_POST['student_id'];
-    $mail = $_POST['email'];
-    $phone_no = $_POST['phone'];
-    $bus_route = $_POST['route'];
-    $stud_address = $_POST['address'];
+// ✅ Check if form submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $query = "INSERT INTO students(name, student_id, email, phone, route, address)
-              VALUES('$sname', '$stud_id', '$mail', '$phone_no', '$bus_route', '$stud_address')";
+    // Collect form data
+    $sname = $_POST['name'];
+    $mail = $_POST['college_email'];
+    $s_afn = $_POST['afn_roll_number'];  
+    $phone_no = $_POST['phone_number'];
+    $s_role = $_POST['role'];
+    $select_bus = $_POST['bus'];
+
+    $query = "INSERT INTO students (name, email, afn_roll_number, phone, role, bus)
+              VALUES ('$sname', '$mail', '$s_afn', '$phone_no', '$s_role', '$select_bus')";
 
     $run = mysqli_query($con, $query);
 
     if ($run) {
-        echo "✅ Data inserted successfully!";
+        echo "<p style='color: green; font-weight: bold;'>✅ Data inserted successfully!</p>";
     } else {
-        echo "❌ Error inserting data: " . mysqli_error($con);
+        echo "<p style='color: red; font-weight: bold;'>❌ Error inserting data: " . mysqli_error($con) . "</p>";
     }
 }
 ?>
