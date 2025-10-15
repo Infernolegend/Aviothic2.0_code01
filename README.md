@@ -17,8 +17,9 @@ A modern and responsive college transport management system built using **HTML, 
 
 ## ⚙️ Tech Stack
 
-- **Frontend:** HTML5, CSS3, JavaScript  
-- **Storage:** Browser LocalStorage (No database needed)  
+- **Frontend:** HTML5, CSS3, JavaScript
+- **Backend**   PHP, MySql  
+- **Storage:** Browser LocalStorage 
 - **Design:** Responsive + Classy + Smooth UI animations  
 
 ---
