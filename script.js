@@ -313,3 +313,187 @@ window.onscroll = function () {
   }
   prevScrollPos = currentScrollPos;
 };
+
+// Function to open map popup with specific route map
+function openMapPopup(route) {
+  const popup = document.getElementById("mapPopup");
+  const iframe = document.getElementById("routeMapFrame");
+
+  // Different maps for each route — tum yahan apne route ke Google Map embed link daal sakte ho
+  const maps = {
+    route1: 'https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d114298.41230361754!2d80.26403459050903!3d26.46135696276596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x399c30b106d0fdeb%3A0xa3ee48b16d8be481!2sBithoor%20Rd%2C%20Uttar%20Pradesh!3m2!1d26.558754699999998!2d80.2624915!4m5!1s0x399c4224d727667f%3A0xb4fca6542e514125!2sKanpur%20Institute%20of%20Technology%2C%20A1%2C%20UPSIDC%20Industrial%20Area%2C%20Chakeri%20Ward%2C%20Rooma%2C%20Kanpur%2C%20Uttar%20Pradesh%20208007!3m2!1d26.3699791!2d80.42424059999999!5e0!3m2!1sen!2sin!4v1760506252330!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">',
+    route2: 'https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d114316.91689476454!2d80.23887908980092!3d26.44271457439408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x399c36fcbd168daf%3A0x3d376e4a91569554!2sRatanpur%20Rd%2C%20Nankari%2C%20Kalyanpur%2C%20Kanpur%2C%20Uttar%20Pradesh%20208016!3m2!1d26.5186012!2d80.226868!4m5!1s0x399c4224d727667f%3A0xb4fca6542e514125!2sKanpur%20Institute%20of%20Technology%2C%20A1%2C%20UPSIDC%20Industrial%20Area%2C%20Chakeri%20Ward%2C%20Rooma%2C%20Kanpur%2C%20Uttar%20Pradesh%20208007!3m2!1d26.3699791!2d80.42424059999999!5e0!3m2!1sen!2sin!4v1760506942083!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">',
+    route3: 'https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d114372.19345225776!2d80.30909188768553!3d26.386953609234514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x399c465bf40a0915%3A0x6731a638ebd4e125!2sNaubasta%20Bamba%2C%20Naubasta%2C%20Kanpur%2C%20Uttar%20Pradesh!3m2!1d26.4031058!2d80.314521!4m5!1s0x399c4224d727667f%3A0xb4fca6542e514125!2sKanpur%20Institute%20of%20Technology%2C%20A1%2C%20UPSIDC%20Industrial%20Area%2C%20Chakeri%20Ward%2C%20Rooma%2C%20Kanpur%2C%20Uttar%20Pradesh%20208007!3m2!1d26.3699791!2d80.42424059999999!5e0!3m2!1sen!2sin!4v1760507074219!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">',
+    route4: 'https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d114336.78182121897!2d80.2835791390407!3d26.42268813689665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e6!4m5!1s0x399c3900275b0f6b%3A0x85fdf25ea8512da1!2sRawatpur%20crossing%2C%20Moti%20Vihar%20Society%2C%20Rawat%20Pur%2C%20Kanpur%2C%20Uttar%20Pradesh!3m2!1d26.481417!2d80.30002999999999!4m5!1s0x399c4224d727667f%3A0xb4fca6542e514125!2sKanpur%20Institute%20of%20Technology%2C%20A1%2C%20UPSIDC%20Industrial%20Area%2C%20Chakeri%20Ward%2C%20Rooma%2C%20Kanpur%2C%20Uttar%20Pradesh%20208007!3m2!1d26.3699791!2d80.42424059999999!5e0!3m2!1sen!2sin!4v1760507172859!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">',
+  };
+
+  iframe.src = maps[route] || "";
+  popup.style.display = "flex";
+}
+
+// Function to close map popup
+function closeMapPopup() {
+  document.getElementById("mapPopup").style.display = "none";
+  document.getElementById("routeMapFrame").src = "";
+}
+
+// Attach event listener to "View Map" buttons
+document.querySelectorAll(".view-details").forEach((btn, index) => {
+  btn.addEventListener("click", () => openMapPopup(`route${index + 1}`));
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const searchBox = document.getElementById("search-box");
+    const searchBtn = document.getElementById("searchBtn");
+    const table = document.querySelector("#student-info table tbody");
+    const rows = table.getElementsByTagName("tr");
+
+    function searchTable() {
+        const query = searchBox.value.toLowerCase();
+        for (let i = 0; i < rows.length; i++) {
+            const cells = rows[i].getElementsByTagName("td");
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j].textContent.toLowerCase().includes(query)) {
+                    match = true;
+                    break;
+                }
+            }
+            rows[i].style.display = match ? "" : "none";
+        }
+    }
+
+    searchBtn.addEventListener("click", searchTable);
+
+    // Optional: Search while typing
+    searchBox.addEventListener("keyup", searchTable);
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // --- STUDENT SEARCH ---
+    const studentSearchBox = document.getElementById("search-box");
+    const studentSearchBtn = document.getElementById("searchBtn");
+    const studentTable = document.querySelector("#student-info table tbody");
+    const studentRows = studentTable.getElementsByTagName("tr");
+
+    function searchStudentTable() {
+        const query = studentSearchBox.value.toLowerCase();
+        for (let i = 0; i < studentRows.length; i++) {
+            const cells = studentRows[i].getElementsByTagName("td");
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j].textContent.toLowerCase().includes(query)) {
+                    match = true;
+                    break;
+                }
+            }
+            studentRows[i].style.display = match ? "" : "none";
+        }
+    }
+
+    studentSearchBtn.addEventListener("click", searchStudentTable);
+    studentSearchBox.addEventListener("keyup", searchStudentTable);
+
+
+    // --- FACULTY SEARCH ---
+    const facultySearchBox = document.getElementById("faculty-search");
+    const facultySearchBtn = document.querySelector("#faculty-info .btn-primary");
+    const facultyTable = document.querySelector("#faculty-info table tbody");
+    const facultyRows = facultyTable.getElementsByTagName("tr");
+
+    function searchFacultyTable() {
+        const query = facultySearchBox.value.toLowerCase();
+        for (let i = 0; i < facultyRows.length; i++) {
+            const cells = facultyRows[i].getElementsByTagName("td");
+            let match = false;
+            for (let j = 0; j < cells.length; j++) {
+                if (cells[j].textContent.toLowerCase().includes(query)) {
+                    match = true;
+                    break;
+                }
+            }
+            facultyRows[i].style.display = match ? "" : "none";
+        }
+    }
+
+    facultySearchBtn.addEventListener("click", searchFacultyTable);
+    facultySearchBox.addEventListener("keyup", searchFacultyTable);
+});
+// 🚌 Generate 50-seat map (10 rows × 5 seats = 50)
+function generateBusSeats() {
+  const container = document.getElementById("busSeatMapContainer");
+  container.innerHTML = "";
+
+  // Front seats: driver + conductor
+  const frontRow = document.createElement("div");
+  frontRow.classList.add("front-row");
+  frontRow.innerHTML = `
+    <div class="conductor-seat">C</div>
+    <div class="driver-seat">D</div>
+  `;
+  container.appendChild(frontRow);
+
+  // 10 rows × (2 left + 3 right)
+  let seatNum = 1;
+  for (let i = 0; i < 10; i++) {
+    const row = document.createElement("div");
+    row.classList.add("row");
+
+    const left = document.createElement("div");
+    left.classList.add("left-seats");
+
+    for (let j = 0; j < 2; j++) {
+      const seat = document.createElement("div");
+      seat.classList.add("seat", "available");
+      seat.textContent = seatNum++;
+      seat.addEventListener("click", toggleSeatStatus);
+      left.appendChild(seat);
+    }
+
+    const right = document.createElement("div");
+    right.classList.add("right-seats");
+
+    for (let k = 0; k < 3; k++) {
+      const seat = document.createElement("div");
+      seat.classList.add("seat", "available");
+      seat.textContent = seatNum++;
+      seat.addEventListener("click", toggleSeatStatus);
+      right.appendChild(seat);
+    }
+
+    row.appendChild(left);
+    row.appendChild(right);
+    container.appendChild(row);
+  }
+}
+
+// 🎯 Seat Click Handler
+function toggleSeatStatus(e) {
+  const seat = e.target;
+  const seatNo = seat.textContent;
+
+  if (seat.classList.contains("booked")) {
+    seat.classList.remove("booked");
+    seat.classList.add("available");
+    alert(`Seat ${seatNo} is now available ✅`);
+  } else {
+    seat.classList.remove("available");
+    seat.classList.add("booked");
+    alert(`Seat ${seatNo} booked successfully 🪑`);
+  }
+}
+
+// 🔘 Popup Controls
+document.getElementById("viewSeatsBtn").addEventListener("click", () => {
+  generateBusSeats();
+  document.getElementById("seatPopup").style.display = "flex";
+});
+
+document.getElementById("closeSeatPopup").addEventListener("click", () => {
+  document.getElementById("seatPopup").style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+  const popup = document.getElementById("seatPopup");
+  if (e.target === popup) popup.style.display = "none";
+});
